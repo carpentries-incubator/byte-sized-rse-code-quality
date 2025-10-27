@@ -1,5 +1,5 @@
 ---
-title: "Code Style, Quality & Linting"
+title: "Introduction"
 teaching: 15
 exercises: 0
 ---
@@ -16,8 +16,8 @@ exercises: 0
 ::::::::::::::::::::::::::::::::::::: objectives
 
 - Understand why consistent code style is important for collaboration and long-term maintainability.
-- Identify key code style practices and how they vary between programming languages.
 - Recognise how maintaining good code style can reduce bugs and improve code quality.
+- Identify key code style practices and how they vary between programming languages.
 - Explain what a linter is and describe its role in detecting errors and enforcing style.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::
@@ -25,11 +25,15 @@ exercises: 0
 This session introduces the importance of code style and linting in writing clean, consistent, and maintainable code. You will learn how following a defined style guide improves code readability and collaboration, 
 and how automated tools, known as linters, can help identify and fix style issues early in the development process. We will explore common linting tools and how to integrate them into your software development workflow.
 
-## Introduction to Code Style
+## Code Style
 
 ### Why Does Code Style Matter?
 
-Software development is inherently a collaborative activity. Even if you do not currently intend for anyone else to read your code, chances are someone will need to in the future — and that person might even be you, months or years later. By following and consistently applying code styling guidelines, you can significantly improve the readability and maintainability of your code. Consistency plays a vital role in this process. Adopting a clear set of style guidelines not only helps you write uniform code but also makes it easier to switch between projects. This is especially important when working as part of a team, where shared understanding and clarity are essential.
+Software development is inherently a collaborative activity. 
+Even if you do not currently intend for anyone else to read your code, chances are someone will need to in the future — and that person might even be you, months or years later. By following and consistently applying code styling guidelines, you can significantly improve the readability and maintainability of your code. 
+Consistency plays a vital role in this process. 
+Adopting a clear set of style guidelines not only helps you write uniform code but also makes it easier to switch between projects. 
+This is especially important when working as part of a team, where shared understanding and clarity are essential.
 
 ### Key Code Style Practices & Conventions
 
@@ -57,7 +61,7 @@ Some examples of small oversights that stack up over time include:
 - bad indentation can cause logic errors — like running a block of code when you did not intend to
 - variable scoping problems (e.g. reusing the same variable name in different scopes can lead to *shadowing*, where a local variable hides a global or outer-scope variable, resulting in unexpected values being used.
 
-## Introduction to Linters
+## Linters
 
 ### What is a Linter and Why Use One?
 

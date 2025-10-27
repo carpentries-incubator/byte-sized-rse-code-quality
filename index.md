@@ -2,7 +2,7 @@
 site: sandpaper::sandpaper_site
 ---
 
-This is a Byte-Sized RSE Lesson on Code Style, Quality & Linting, part of the [Byte-Sized RSE Series](https://carpentries-incubator.github.io/byte-sized-rse-overview/).
+This is a Byte-Sized RSE lesson on code style, quality & linting, part of the [Byte-Sized RSE Series](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main).
 
 ## Learning Objectives
 

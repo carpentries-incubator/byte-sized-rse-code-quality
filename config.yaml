@@ -18,13 +18,13 @@ carpentry: 'incubator'
 carpentry_description: 'Byte-sized RSE'
 
 # Overall title for pages.
-title: 'Byte-sized RSE'
+title: 'Byte-sized RSE: Code Style, Quality & Linting'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: 2025-01-15
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, RSE, research software, development, practices'
+keywords: 'software, RSE, research software, development, practices, code style, linters'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -43,26 +43,6 @@ branch: 'main'
 contact: 'a.nenadic@software.ac.uk'
 
 # Navigation ------------------------------------------------
-#
-# Use the following menu items to specify the order of
-# individual pages in each dropdown section. Leave blank to
-# include all pages in the folder.
-#
-# Example -------------
-#
-# episodes:
-# - introduction.md
-# - first-steps.md
-#
-# learners:
-# - setup.md
-#
-# instructors:
-# - instructor-notes.md
-#
-# profiles:
-# - one-learner.md
-# - another-learner.md
 
 # Disable sidebar automatic numbering
 disable_sidebar_numbering: true

@@ -1,6 +1,6 @@
-## Byte-Sized RSE Lesson on Code Style, Quality & Linting
+## Byte-Sized RSE Lesson: Code Style, Quality & Linting
 
-This is a Byte-Sized RSE Lesson on Code Style, Quality & Linting, part of the [Byte-Sized RSE Series](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main).
+This is a Byte-Sized RSE lesson on code style, quality & linting, part of the [Byte-Sized RSE Series](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main).
 
 ### Questions
 
@@ -11,6 +11,8 @@ This is a Byte-Sized RSE Lesson on Code Style, Quality & Linting, part of the [B
 
 
 ### Learning objectives
+
+At the end of this lesson, learners should be able to:
 
 - Understand why consistent code style is important for collaboration and long-term maintainability.
 - Identify key code style practices and how they vary between programming languages.
