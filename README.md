@@ -10,7 +10,7 @@ This is a Byte-Sized RSE lesson on code style, quality & linting, part of the [B
 - What is a linter, and how does it help improve code quality?
 
 
-### Learning objectives
+### Learning Objectives
 
 At the end of this lesson, learners should be able to:
 
