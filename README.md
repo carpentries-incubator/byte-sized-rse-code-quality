@@ -1,4 +1,4 @@
-## Byte-Sized RSE Lesson: Code Style, Quality & Linting
+## Byte-Sized RSE: Code Style, Quality & Linting
 
 This is a Byte-Sized RSE lesson on code style, quality & linting, part of the [Byte-Sized RSE Series](https://github.com/carpentries-incubator/byte-sized-rse-overview/tree/main).
 
