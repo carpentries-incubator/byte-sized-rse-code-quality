@@ -12,4 +12,4 @@ At the end of this lesson, learners should be able to:
 - Identify key code style practices and how they vary between programming languages.
 - Recognise how maintaining good code style can reduce bugs and improve code quality.
 - Explain what a linter is and describe its role in detecting errors and enforcing style.
-
+- Perform automated code style checking and static code analysis with a linter.
