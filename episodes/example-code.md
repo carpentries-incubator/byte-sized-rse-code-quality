@@ -34,9 +34,26 @@ git clone https://github.com/UNIVERSE-HPC/code-style-example
 cd code-style-example
 ```
 
+::::::::::::::::::::::::::::::::::::::::: instructor
+
+## Checkpoint: Attendee Progress
+
+Who's been able to clone the GitHub repository on their local machine?
+
+:::::::::::::::::::::::::::::::::::::::::
+
+
 ## Examining the Code
 
 Next, let's take a look at the code, which is in the root directory of the repository in a file called `climate_analysis.py`.
+Feel free to use your preferred editor of choice, such as Notepad, Nano, or Visual Studio Code.
+
+For example, you can also use `nano` if you'd prefer to use the command line, e.g.
+
+```bash
+cd code-style-example
+nano climate-analysis.py
+```
 
 ```python
 import string
@@ -65,7 +82,12 @@ for line in climate_data:
 ```
 
 The code is designed to process temperature data from a separate data file.
-The code reads in data line by line from the data file, and prints out fahrenheit temperatures in both celsius and kelvin.
+A few things to note about the code:
+
+- It reads in data line by line from the data file, and prints out fahrenheit temperatures in both celsius and kelvin
+- If a line contains starts with a `#` symbol, it ignores the line assuming it's a comment
+- It defines and uses two functions to do each of the two temperature conversions from Fahrenheit to Celsius and Fahrenheit to Kelvin
+- For the purposes of this lesson, the code is deliberately written to contain some issues! We'll go into these throughout the session
 
 The code expects to find the data file `sc_climate_data_10.csv` (formatted in the Comma Separated Value CSV format) in the `data` directory,
 and looks like this:
@@ -86,19 +108,6 @@ and looks like this:
 
 It contains a number of lines, each containing a number of values, each separated by a comma.
 There's also a comment line at the top, to tell us what each column represents.
-
-Now let's take a look at the Python code,
-using any text or code editor you like to open the file.
-You can also use `nano` if you'd prefer to use the command line, e.g.
-
-```bash
-cd code-style-example
-nano climate-analysis.py
-```
-
-The code opens the data file, and also defines some functions to do two temperature conversions from Fahrenheit to Celsius and Fahrenheit to Kelvin.
-Note that for the purposes of this lesson,
-the code is deliberately written to contain some issues!
 
 ## Why Write Readable Code?
 
@@ -121,7 +130,7 @@ But... the key is that once you understand how to do something,
 it's a good idea to make sure it's readable and understandable by other people,
 which may include a future version of yourself,
 6 months into the future.
-So it's really helpful to end up with good clean code so yit's easier to understand.
+So it's really helpful to end up with good clean code so it's easier to understand.
 
 Another key benefit to writing "cleaner" code is that its generally easier to extend and otherwise modify in the future.
 When code is initially written it's often impossible to tell if it will be reused in some way elsewhere.
@@ -160,6 +169,8 @@ Within the shell, in the root directory of the repository, run the code as follo
 ```bash
 python climate_analysis.py
 ```
+
+If running on a Mac, you may need to use `python3` instead of `python`.
 
 ```output
 Max temperature in Celsius 14.73888888888889 Kelvin 287.88888888888886

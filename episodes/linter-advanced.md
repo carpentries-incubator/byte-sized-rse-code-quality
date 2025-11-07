@@ -26,7 +26,7 @@ exercises: 0
 We can also obtain a more verbose report by adding `--reports y` to the command, which gives us a lot more detail:
 
 ```bash
-pylint --reports y file
+pylint --reports y climate-analysis.py
 ```
 
 Here's a part of that output:
@@ -60,9 +60,9 @@ Messages
 
 :::::::::::::::::: instructor
 
-### Pylint Verbose Reporting - Checkin
+### Checkpoint: Extended Reporting
 
-For those doing activity, who's managed to run this command?
+Who's been able to run Pylint with extended reporting?
 
 ::::::::::::::::::
 
@@ -112,6 +112,14 @@ Let's add one to our code now, within the `fahr_to_celsius` function.
 ```
 
 Re-run `pylint` command - can see we have one less docstring error, and a slightly higher score.
+
+:::::::::::::::::: instructor
+
+### Checkpoint: Add a Docstring
+
+Who's been able to add a docstring and re-run Pylint?
+
+::::::::::::::::::
 
 If you'd like to know more about docstrings and commenting,
 there's an in-depth [RealPython tutorial](https://realpython.com/documenting-python-code/) on these and the different ways you can format them.
@@ -180,7 +188,7 @@ pylint --generate-rcfile > .pylintrc
 ```
 
 If you edit this generated file you'll notice there are many things we can specify to pylint.
-For now, look for `disable=` and add `C0301` to the list of ignored issues already present that are separated by commas, e.g.:
+For now, look for `disable=` (around line 439) and add `C0301` to the list of ignored issues already present that are separated by commas, e.g.:
 
 ```text
 # no Warning level messages displayed, use "--disable=all --enable=classes
@@ -200,11 +208,28 @@ disable=C0301,
 
 Every time you re-run it now, the `C0301` issue will not be present.
 
+:::::::::::::::::: instructor
+
+### Checkpoint: Persistently Ignoring Pylint Rules
+
+Who's generated a Pylint configuration file and edited it to ignore the long line warning?
+
+::::::::::::::::::
+
+
 ## Using Pylint within VSCode
 
 The good news is that if you're using the VSCode IDE,
 we can also (or alternatively) install a Python linter in VSCode to give us this code analysis functionality, by installing the Pylint extension.
 Select the `Extensions` icon and this time search for `Pylint`, the one by Microsoft, and click `Install`.
+
+:::::::::::::::::: instructor
+
+### Checkpoint: Installing Pylint Extension to VSCode
+
+Who's been able to install the Pylint extension to VSCode?
+
+::::::::::::::::::
 
 Going back to our code you should now find lots of squiggly underlines of various colours.
 
@@ -220,7 +245,7 @@ So go to `File` then `Save` on the menu bar, and you should now see a lot of squ
 :::::::::::::::::::::::::::::::::::::::::
 
 These squiggly lines indicate an issue, and by hovering over them, we can see details of the issue.
-For example, by hovering over the variables `shift` or `comment` - we can see that the variable names don't conform to what's known as an `UPPER_CASE` naming convention.
+For example, by hovering over the variables `shift` or `comment` - we can see that the variable names don't conform to what's known as an `UPPER_CASE` naming convention for variables which remain constant.
 Simply, the linter has identified these variables as constants, and typically, these are in upper case. We should rename them, e.g. `SHIFT` and `COMMENT`.
 But following this, we also need to update the reference to `comment` in the code so it's also upper case.
 Now if we save the file selecting `File` then `Save`, we should see the linter rerun, and those highlighted issues disappear.
