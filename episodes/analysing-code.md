@@ -93,7 +93,7 @@ You should notice the prompt changes to reflect that the virtual environment is 
 
 :::::::::::::::::::::::::::::::::::::::::::::::: instructor
 
-### Setting up a Virtual Environment - Checkin
+### Checkpoint: Setting up a Virtual Environment
 
 Who has successfully created and activated their virtual environment?
 
@@ -114,14 +114,15 @@ setuptools 59.6.0
 ```
 
 We can see this is essentially empty,
-aside from some default packages that are always installed.
-Note that whilst within this virtual environment,
+aside from some default packages that installed when it is created.
+Depending on your version of Python, you may only see `pip` installed here.
+Importantly, note that whilst within this virtual environment,
 we no longer have access to any globally installed Python packages.
 
 ### Installing Pylint into our Virtual Environment
 
 The next thing we can do is install any packages needed for this codebase.
-As it turns out, there isn't any needed for the code itself,
+As it turns out, there isn't any particular packages needed for the code itself,
 but we wish to use pylint, and that's a python package.
 
 ::::::::::::::::::::::::::::::::::::::::: callout
@@ -131,7 +132,7 @@ but we wish to use pylint, and that's a python package.
 Pylint is a tool that can be run from the command line or via IDEs like VSCode,
 which can help our code in many ways:
 
-- Ensure consistent code style : whilst in-IDE context-sensitive highlighting such as that provided by VSCode, it helps us stay consistent with established code style standards such as ([PEP 8](https://peps.python.org/pep-0008/)) as we write code by highlighting infractions.
+- Ensure consistent code style: by verifying our code against establihsed coding guidelines such as ([PEP 8](https://peps.python.org/pep-0008/)), it helps us stay consistent within these code style standards. This applies to ourselves, but also across every member of a team.
 - Perform basic error detection: Pylint can look for certain Python type errors.
 - Check variable naming conventions: Pylint often goes beyond PEP 8 to include other common conventions, such as naming variables outside of functions in upper case.
 - Customisation: you can specify which errors and conventions you wish to check for, and those you wish to ignore.
@@ -168,6 +169,15 @@ typing_extensions 4.13.1
 
 So in addition to Pylint,
 we see a number of other dependent packages installed that are required by it.
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Installing Pylint
+
+Who has been able to install Pylint?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 We can also *deactivate* our virtual environment:
 
@@ -216,7 +226,7 @@ climate_analysis.py:6:15: R1732: Consider using 'with' for resource-allocating o
 climate_analysis.py:1:0: W0611: Unused import string (unused-import)
 
 ------------------------------------------------------------------
-Your code has been rated at 0.59/10 (previous run: 0.59/10, +0.00)
+Your code has been rated at 0.59/10
 ```
 
 For each issue, it tells us:
@@ -232,6 +242,15 @@ Note that it is perfectly possible to get a negative score,
 since it just keeps deducting from 10!
 But we can see here that our score appears very low - 0.59/10,
 and if we were to now resolve each of these issues in turn, we should get a perfect score.
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Running Pylint
+
+Who has been able to run Pylint on the example code?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Identifying and Fixing an Issue
 
@@ -324,6 +343,14 @@ Your code has been rated at 1.18/10 (previous run: 1.18/10, +0.00)
 ```
 
 We can see that most of our issues are do to with coding conventions.
+
+:::::::::::::::::::::::::::::::::::::::::::::::: instructor
+
+### Checkpoint: Fixing our Code and Re-running Pylint
+
+Who has been able to re-run Pylint after making changes to the code?
+
+::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::: keypoints 
 
