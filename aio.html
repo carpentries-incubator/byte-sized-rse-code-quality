@@ -531,7 +531,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-example-code"><p>Content from <a href="example-code.html">Example Code</a></p>
 <hr>
-<p>Last updated on 2025-10-28 |
+<p>Last updated on 2025-11-07 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-code-quality/edit/main/episodes/example-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -582,41 +582,61 @@ contents:</p>
 <span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/UNIVERSE-HPC/code-style-example</span>
 <span id="cb1-3"><a href="#cb1-3" tabindex="-1"></a><span class="bu">cd</span> code-style-example</span></code></pre>
 </div>
+
 </section><section><h2 class="section-heading" id="examining-the-code">Examining the Code<a class="anchor" aria-label="anchor" href="#examining-the-code"></a>
 </h2>
 <hr class="half-width">
 <p>Next, let’s take a look at the code, which is in the root directory
-of the repository in a file called <code>climate_analysis.py</code>.</p>
+of the repository in a file called <code>climate_analysis.py</code>.
+Feel free to use your preferred editor of choice, such as Notepad, Nano,
+or Visual Studio Code.</p>
+<p>For example, you can also use <code>nano</code> if you’d prefer to
+use the command line, e.g.</p>
 <div class="codewrapper sourceCode" id="cb2">
+<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
+</h3>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="bu">cd</span> code-style-example</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="fu">nano</span> climate-analysis.py</span></code></pre>
+</div>
+<div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">PYTHON<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="im">import</span> string</span>
-<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a>shift <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb2-5"><a href="#cb2-5" tabindex="-1"></a>comment <span class="op">=</span> <span class="st">'#'</span></span>
-<span id="cb2-6"><a href="#cb2-6" tabindex="-1"></a>climate_data <span class="op">=</span> <span class="bu">open</span>(<span class="st">'data/sc_climate_data_10.csv'</span>, <span class="st">'r'</span>)</span>
-<span id="cb2-7"><a href="#cb2-7" tabindex="-1"></a></span>
-<span id="cb2-8"><a href="#cb2-8" tabindex="-1"></a><span class="kw">def</span> FahrToCelsius(fahr):</span>
-<span id="cb2-9"><a href="#cb2-9" tabindex="-1"></a>    celsius <span class="op">=</span> ((fahr <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) </span>
-<span id="cb2-10"><a href="#cb2-10" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
-<span id="cb2-11"><a href="#cb2-11" tabindex="-1"></a><span class="kw">def</span> FahrToKelvin(fahr):</span>
-<span id="cb2-12"><a href="#cb2-12" tabindex="-1"></a>    kelvin <span class="op">=</span> FahrToCelsius(fahr) <span class="op">+</span> <span class="fl">273.15</span></span>
-<span id="cb2-13"><a href="#cb2-13" tabindex="-1"></a>    <span class="cf">return</span> kelvin</span>
-<span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a></span>
-<span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> climate_data:</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    data <span class="op">=</span> line.split(<span class="st">','</span>)</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="cf">if</span> data[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">!=</span> comment:</span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>        fahr <span class="op">=</span> <span class="bu">float</span>(data[<span class="dv">3</span>])</span>
-<span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>        celsius <span class="op">=</span> FahrToCelsius(fahr)</span>
-<span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>        kelvin <span class="op">=</span> FahrToKelvin(fahr)</span>
-<span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Max temperature in Celsius'</span>, celsius, <span class="st">'Kelvin'</span>, kelvin)</span></code></pre>
+<pre class="sourceCode python" tabindex="0"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="im">import</span> string</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a>shift <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb3-5"><a href="#cb3-5" tabindex="-1"></a>comment <span class="op">=</span> <span class="st">'#'</span></span>
+<span id="cb3-6"><a href="#cb3-6" tabindex="-1"></a>climate_data <span class="op">=</span> <span class="bu">open</span>(<span class="st">'data/sc_climate_data_10.csv'</span>, <span class="st">'r'</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" tabindex="-1"></a><span class="kw">def</span> FahrToCelsius(fahr):</span>
+<span id="cb3-9"><a href="#cb3-9" tabindex="-1"></a>    celsius <span class="op">=</span> ((fahr <span class="op">-</span> <span class="dv">32</span>) <span class="op">*</span> (<span class="dv">5</span><span class="op">/</span><span class="dv">9</span>)) </span>
+<span id="cb3-10"><a href="#cb3-10" tabindex="-1"></a>    <span class="cf">return</span> celsius</span>
+<span id="cb3-11"><a href="#cb3-11" tabindex="-1"></a><span class="kw">def</span> FahrToKelvin(fahr):</span>
+<span id="cb3-12"><a href="#cb3-12" tabindex="-1"></a>    kelvin <span class="op">=</span> FahrToCelsius(fahr) <span class="op">+</span> <span class="fl">273.15</span></span>
+<span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a>    <span class="cf">return</span> kelvin</span>
+<span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a></span>
+<span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a></span>
+<span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> climate_data:</span>
+<span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>    data <span class="op">=</span> line.split(<span class="st">','</span>)</span>
+<span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>    <span class="cf">if</span> data[<span class="dv">0</span>][<span class="dv">0</span>] <span class="op">!=</span> comment:</span>
+<span id="cb3-20"><a href="#cb3-20" tabindex="-1"></a>        fahr <span class="op">=</span> <span class="bu">float</span>(data[<span class="dv">3</span>])</span>
+<span id="cb3-21"><a href="#cb3-21" tabindex="-1"></a>        celsius <span class="op">=</span> FahrToCelsius(fahr)</span>
+<span id="cb3-22"><a href="#cb3-22" tabindex="-1"></a>        kelvin <span class="op">=</span> FahrToKelvin(fahr)</span>
+<span id="cb3-23"><a href="#cb3-23" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">'Max temperature in Celsius'</span>, celsius, <span class="st">'Kelvin'</span>, kelvin)</span></code></pre>
 </div>
 <p>The code is designed to process temperature data from a separate data
-file. The code reads in data line by line from the data file, and prints
-out fahrenheit temperatures in both celsius and kelvin.</p>
+file. A few things to note about the code:</p>
+<ul>
+<li>It reads in data line by line from the data file, and prints out
+fahrenheit temperatures in both celsius and kelvin</li>
+<li>If a line contains starts with a <code>#</code> symbol, it ignores
+the line assuming it’s a comment</li>
+<li>It defines and uses two functions to do each of the two temperature
+conversions from Fahrenheit to Celsius and Fahrenheit to Kelvin</li>
+<li>For the purposes of this lesson, the code is deliberately written to
+contain some issues! We’ll go into these throughout the session</li>
+</ul>
 <p>The code expects to find the data file
 <code>sc_climate_data_10.csv</code> (formatted in the Comma Separated
 Value CSV format) in the <code>data</code> directory, and looks like
@@ -635,19 +655,6 @@ this:</p>
 <p>It contains a number of lines, each containing a number of values,
 each separated by a comma. There’s also a comment line at the top, to
 tell us what each column represents.</p>
-<p>Now let’s take a look at the Python code, using any text or code
-editor you like to open the file. You can also use <code>nano</code> if
-you’d prefer to use the command line, e.g.</p>
-<div class="codewrapper sourceCode" id="cb4">
-<h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
-</h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="bu">cd</span> code-style-example</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="fu">nano</span> climate-analysis.py</span></code></pre>
-</div>
-<p>The code opens the data file, and also defines some functions to do
-two temperature conversions from Fahrenheit to Celsius and Fahrenheit to
-Kelvin. Note that for the purposes of this lesson, the code is
-deliberately written to contain some issues!</p>
 </section><section><h2 class="section-heading" id="why-write-readable-code">Why Write Readable Code?<a class="anchor" aria-label="anchor" href="#why-write-readable-code"></a>
 </h2>
 <hr class="half-width">
@@ -674,7 +681,7 @@ involves trying things out first. But… the key is that once you
 understand how to do something, it’s a good idea to make sure it’s
 readable and understandable by other people, which may include a future
 version of yourself, 6 months into the future. So it’s really helpful to
-end up with good clean code so yit’s easier to understand.</p>
+end up with good clean code so it’s easier to understand.</p>
 <p>Another key benefit to writing “cleaner” code is that its generally
 easier to extend and otherwise modify in the future. When code is
 initially written it’s often impossible to tell if it will be reused in
@@ -718,6 +725,8 @@ as follows:</p>
 </h3>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">python</span> climate_analysis.py</span></code></pre>
 </div>
+<p>If running on a Mac, you may need to use <code>python3</code> instead
+of <code>python</code>.</p>
 <div class="codewrapper">
 <h3 class="code-label">OUTPUT<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -761,7 +770,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-analysing-code"><p>Content from <a href="analysing-code.html">Analysing Code using a Linter</a></p>
 <hr>
-<p>Last updated on 2025-10-23 |
+<p>Last updated on 2025-11-07 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-code-quality/edit/main/episodes/analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -904,16 +913,18 @@ pip        22.0.2
 setuptools 59.6.0</code></pre>
 </div>
 <p>We can see this is essentially empty, aside from some default
-packages that are always installed. Note that whilst within this virtual
-environment, we no longer have access to any globally installed Python
-packages.</p>
+packages that installed when it is created. Depending on your version of
+Python, you may only see <code>pip</code> installed here. Importantly,
+note that whilst within this virtual environment, we no longer have
+access to any globally installed Python packages.</p>
 </div>
 <div class="section level3">
 <h3 id="installing-pylint-into-our-virtual-environment">Installing Pylint into our Virtual Environment<a class="anchor" aria-label="anchor" href="#installing-pylint-into-our-virtual-environment"></a>
 </h3>
 <p>The next thing we can do is install any packages needed for this
-codebase. As it turns out, there isn’t any needed for the code itself,
-but we wish to use pylint, and that’s a python package.</p>
+codebase. As it turns out, there isn’t any particular packages needed
+for the code itself, but we wish to use pylint, and that’s a python
+package.</p>
 <div id="what-is-pylint" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -925,10 +936,10 @@ but we wish to use pylint, and that’s a python package.</p>
 <p>Pylint is a tool that can be run from the command line or via IDEs
 like VSCode, which can help our code in many ways:</p>
 <ul>
-<li>Ensure consistent code style : whilst in-IDE context-sensitive
-highlighting such as that provided by VSCode, it helps us stay
-consistent with established code style standards such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>) as we write code by
-highlighting infractions.</li>
+<li>Ensure consistent code style: by verifying our code against
+establihsed coding guidelines such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>), it helps us stay
+consistent within these code style standards. This applies to ourselves,
+but also across every member of a team.</li>
 <li>Perform basic error detection: Pylint can look for certain Python
 type errors.</li>
 <li>Check variable naming conventions: Pylint often goes beyond PEP 8 to
@@ -972,6 +983,7 @@ typing_extensions 4.13.1</code></pre>
 </div>
 <p>So in addition to Pylint, we see a number of other dependent packages
 installed that are required by it.</p>
+
 <p>We can also <em>deactivate</em> our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1022,7 +1034,7 @@ climate_analysis.py:6:15: R1732: Consider using 'with' for resource-allocating o
 climate_analysis.py:1:0: W0611: Unused import string (unused-import)
 
 ------------------------------------------------------------------
-Your code has been rated at 0.59/10 (previous run: 0.59/10, +0.00)</code></pre>
+Your code has been rated at 0.59/10</code></pre>
 </div>
 <p>For each issue, it tells us:</p>
 <ul>
@@ -1038,6 +1050,7 @@ Note that it is perfectly possible to get a negative score, since it
 just keeps deducting from 10! But we can see here that our score appears
 very low - 0.59/10, and if we were to now resolve each of these issues
 in turn, we should get a perfect score.</p>
+
 </section><section><h2 class="section-heading" id="identifying-and-fixing-an-issue">Identifying and Fixing an Issue<a class="anchor" aria-label="anchor" href="#identifying-and-fixing-an-issue"></a>
 </h2>
 <hr class="half-width">
@@ -1138,6 +1151,7 @@ Your code has been rated at 1.18/10 (previous run: 1.18/10, +0.00)</code></pre>
 </div>
 <p>We can see that most of our issues are do to with coding
 conventions.</p>
+
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -1169,7 +1183,7 @@ any links that you are not going to use.
  -->
 </section></section><section id="aio-linter-advanced"><p>Content from <a href="linter-advanced.html">Advanced Linting Features</a></p>
 <hr>
-<p>Last updated on 2025-10-23 |
+<p>Last updated on 2025-11-07 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-code-quality/edit/main/episodes/linter-advanced.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <div class="text-end">
@@ -1215,7 +1229,7 @@ detail:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--reports</span> y file</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--reports</span> y climate-analysis.py</span></code></pre>
 </div>
 <p>Here’s a part of that output:</p>
 <div class="codewrapper">
@@ -1298,6 +1312,7 @@ can, particularly for critical or complex functions.</p>
 </div>
 <p>Re-run <code>pylint</code> command - can see we have one less
 docstring error, and a slightly higher score.</p>
+
 <p>If you’d like to know more about docstrings and commenting, there’s
 an in-depth <a href="https://realpython.com/documenting-python-code/" class="external-link">RealPython
 tutorial</a> on these and the different ways you can format them.</p>
@@ -1381,9 +1396,9 @@ repository root directory, then:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 <p>If you edit this generated file you’ll notice there are many things
-we can specify to pylint. For now, look for <code>disable=</code> and
-add <code>C0301</code> to the list of ignored issues already present
-that are separated by commas, e.g.:</p>
+we can specify to pylint. For now, look for <code>disable=</code>
+(around line 439) and add <code>C0301</code> to the list of ignored
+issues already present that are separated by commas, e.g.:</p>
 <pre class="text"><code># no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=C0301,
@@ -1399,6 +1414,7 @@ disable=C0301,
         use-symbolic-message-instead</code></pre>
 <p>Every time you re-run it now, the <code>C0301</code> issue will not
 be present.</p>
+
 </section><section><h2 class="section-heading" id="using-pylint-within-vscode">Using Pylint within VSCode<a class="anchor" aria-label="anchor" href="#using-pylint-within-vscode"></a>
 </h2>
 <hr class="half-width">
@@ -1408,6 +1424,7 @@ analysis functionality, by installing the Pylint extension. Select the
 <code>Extensions</code> icon and this time search for
 <code>Pylint</code>, the one by Microsoft, and click
 <code>Install</code>.</p>
+
 <p>Going back to our code you should now find lots of squiggly
 underlines of various colours.</p>
 <div id="i-dont-see-any-squiggly-underlines" class="callout">
@@ -1431,14 +1448,14 @@ squiggly underlines in the code.</p>
 can see details of the issue. For example, by hovering over the
 variables <code>shift</code> or <code>comment</code> - we can see that
 the variable names don’t conform to what’s known as an
-<code>UPPER_CASE</code> naming convention. Simply, the linter has
-identified these variables as constants, and typically, these are in
-upper case. We should rename them, e.g. <code>SHIFT</code> and
-<code>COMMENT</code>. But following this, we also need to update the
-reference to <code>comment</code> in the code so it’s also upper case.
-Now if we save the file selecting <code>File</code> then
-<code>Save</code>, we should see the linter rerun, and those highlighted
-issues disappear.</p>
+<code>UPPER_CASE</code> naming convention for variables which remain
+constant. Simply, the linter has identified these variables as
+constants, and typically, these are in upper case. We should rename
+them, e.g. <code>SHIFT</code> and <code>COMMENT</code>. But following
+this, we also need to update the reference to <code>comment</code> in
+the code so it’s also upper case. Now if we save the file selecting
+<code>File</code> then <code>Save</code>, we should see the linter
+rerun, and those highlighted issues disappear.</p>
 <p>We can also see a comprehensive list of all the issues found, by
 opening a code <code>Problems</code> window. In the menu, go to
 <code>View</code> then <code>Problems</code>, and then you’ll see a
@@ -1570,8 +1587,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/aio.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/aio.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-11-04",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-07",
+  "datePublished": "2025-11-07"
 }
 
   </script><script>

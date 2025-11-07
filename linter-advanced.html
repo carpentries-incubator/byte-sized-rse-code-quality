@@ -312,7 +312,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Advanced Linting Features</h1>
-        <p>Last updated on 2025-10-23 |
+        <p>Last updated on 2025-11-07 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-code-quality/edit/main/episodes/linter-advanced.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -358,7 +358,7 @@ detail:</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--reports</span> y file</span></code></pre>
+<pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--reports</span> y climate-analysis.py</span></code></pre>
 </div>
 <p>Here’s a part of that output:</p>
 <div class="codewrapper">
@@ -437,6 +437,7 @@ can, particularly for critical or complex functions.</p>
 </div>
 <p>Re-run <code>pylint</code> command - can see we have one less
 docstring error, and a slightly higher score.</p>
+
 <p>If you’d like to know more about docstrings and commenting, there’s
 an in-depth <a href="https://realpython.com/documenting-python-code/" class="external-link">RealPython
 tutorial</a> on these and the different ways you can format them.</p>
@@ -518,9 +519,9 @@ repository root directory, then:</p>
 <pre class="sourceCode bash" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">pylint</span> <span class="at">--generate-rcfile</span> <span class="op">&gt;</span> .pylintrc</span></code></pre>
 </div>
 <p>If you edit this generated file you’ll notice there are many things
-we can specify to pylint. For now, look for <code>disable=</code> and
-add <code>C0301</code> to the list of ignored issues already present
-that are separated by commas, e.g.:</p>
+we can specify to pylint. For now, look for <code>disable=</code>
+(around line 439) and add <code>C0301</code> to the list of ignored
+issues already present that are separated by commas, e.g.:</p>
 <pre class="text"><code># no Warning level messages displayed, use "--disable=all --enable=classes
 # --disable=W".
 disable=C0301,
@@ -536,6 +537,7 @@ disable=C0301,
         use-symbolic-message-instead</code></pre>
 <p>Every time you re-run it now, the <code>C0301</code> issue will not
 be present.</p>
+
 </section><section><h2 class="section-heading" id="using-pylint-within-vscode">Using Pylint within VSCode<a class="anchor" aria-label="anchor" href="#using-pylint-within-vscode"></a></h2>
 <hr class="half-width"><p>The good news is that if you’re using the VSCode IDE, we can also (or
 alternatively) install a Python linter in VSCode to give us this code
@@ -543,6 +545,7 @@ analysis functionality, by installing the Pylint extension. Select the
 <code>Extensions</code> icon and this time search for
 <code>Pylint</code>, the one by Microsoft, and click
 <code>Install</code>.</p>
+
 <p>Going back to our code you should now find lots of squiggly
 underlines of various colours.</p>
 <div id="i-dont-see-any-squiggly-underlines" class="callout">
@@ -566,14 +569,14 @@ squiggly underlines in the code.</p>
 can see details of the issue. For example, by hovering over the
 variables <code>shift</code> or <code>comment</code> - we can see that
 the variable names don’t conform to what’s known as an
-<code>UPPER_CASE</code> naming convention. Simply, the linter has
-identified these variables as constants, and typically, these are in
-upper case. We should rename them, e.g. <code>SHIFT</code> and
-<code>COMMENT</code>. But following this, we also need to update the
-reference to <code>comment</code> in the code so it’s also upper case.
-Now if we save the file selecting <code>File</code> then
-<code>Save</code>, we should see the linter rerun, and those highlighted
-issues disappear.</p>
+<code>UPPER_CASE</code> naming convention for variables which remain
+constant. Simply, the linter has identified these variables as
+constants, and typically, these are in upper case. We should rename
+them, e.g. <code>SHIFT</code> and <code>COMMENT</code>. But following
+this, we also need to update the reference to <code>comment</code> in
+the code so it’s also upper case. Now if we save the file selecting
+<code>File</code> then <code>Save</code>, we should see the linter
+rerun, and those highlighted issues disappear.</p>
 <p>We can also see a comprehensive list of all the issues found, by
 opening a code <code>Problems</code> window. In the menu, go to
 <code>View</code> then <code>Problems</code>, and then you’ll see a
@@ -709,8 +712,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/linter-advanced.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/linter-advanced.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-10-23",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-07",
+  "datePublished": "2025-11-07"
 }
 
   </script><script>

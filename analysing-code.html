@@ -310,7 +310,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Analysing Code using a Linter</h1>
-        <p>Last updated on 2025-10-23 |
+        <p>Last updated on 2025-11-07 |
 
         <a href="https://github.com/carpentries-incubator/byte-sized-rse-code-quality/edit/main/episodes/analysing-code.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -449,15 +449,17 @@ pip        22.0.2
 setuptools 59.6.0</code></pre>
 </div>
 <p>We can see this is essentially empty, aside from some default
-packages that are always installed. Note that whilst within this virtual
-environment, we no longer have access to any globally installed Python
-packages.</p>
+packages that installed when it is created. Depending on your version of
+Python, you may only see <code>pip</code> installed here. Importantly,
+note that whilst within this virtual environment, we no longer have
+access to any globally installed Python packages.</p>
 </div>
 <div class="section level3">
 <h3 id="installing-pylint-into-our-virtual-environment">Installing Pylint into our Virtual Environment<a class="anchor" aria-label="anchor" href="#installing-pylint-into-our-virtual-environment"></a></h3>
 <p>The next thing we can do is install any packages needed for this
-codebase. As it turns out, there isn’t any needed for the code itself,
-but we wish to use pylint, and that’s a python package.</p>
+codebase. As it turns out, there isn’t any particular packages needed
+for the code itself, but we wish to use pylint, and that’s a python
+package.</p>
 <div id="what-is-pylint" class="callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
@@ -468,10 +470,10 @@ but we wish to use pylint, and that’s a python package.</p>
 <div class="callout-content">
 <p>Pylint is a tool that can be run from the command line or via IDEs
 like VSCode, which can help our code in many ways:</p>
-<ul><li>Ensure consistent code style : whilst in-IDE context-sensitive
-highlighting such as that provided by VSCode, it helps us stay
-consistent with established code style standards such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>) as we write code by
-highlighting infractions.</li>
+<ul><li>Ensure consistent code style: by verifying our code against
+establihsed coding guidelines such as (<a href="https://peps.python.org/pep-0008/" class="external-link">PEP 8</a>), it helps us stay
+consistent within these code style standards. This applies to ourselves,
+but also across every member of a team.</li>
 <li>Perform basic error detection: Pylint can look for certain Python
 type errors.</li>
 <li>Check variable naming conventions: Pylint often goes beyond PEP 8 to
@@ -514,6 +516,7 @@ typing_extensions 4.13.1</code></pre>
 </div>
 <p>So in addition to Pylint, we see a number of other dependent packages
 installed that are required by it.</p>
+
 <p>We can also <em>deactivate</em> our virtual environment:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">BASH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -562,7 +565,7 @@ climate_analysis.py:6:15: R1732: Consider using 'with' for resource-allocating o
 climate_analysis.py:1:0: W0611: Unused import string (unused-import)
 
 ------------------------------------------------------------------
-Your code has been rated at 0.59/10 (previous run: 0.59/10, +0.00)</code></pre>
+Your code has been rated at 0.59/10</code></pre>
 </div>
 <p>For each issue, it tells us:</p>
 <ul><li>The filename</li>
@@ -576,6 +579,7 @@ Note that it is perfectly possible to get a negative score, since it
 just keeps deducting from 10! But we can see here that our score appears
 very low - 0.59/10, and if we were to now resolve each of these issues
 in turn, we should get a perfect score.</p>
+
 </section><section><h2 class="section-heading" id="identifying-and-fixing-an-issue">Identifying and Fixing an Issue<a class="anchor" aria-label="anchor" href="#identifying-and-fixing-an-issue"></a></h2>
 <hr class="half-width"><p>We can also ask for more information on an issue identifier. For
 example, we can see at line 9, near column 35, there is a trailing
@@ -672,6 +676,7 @@ Your code has been rated at 1.18/10 (previous run: 1.18/10, +0.00)</code></pre>
 </div>
 <p>We can see that most of our issues are do to with coding
 conventions.</p>
+
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -757,8 +762,8 @@ any links that you are not going to use.
   "url": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/analysing-code.html",
   "identifier": "https://carpentries-incubator.github.io/byte-sized-rse-code-quality/analysing-code.html",
   "dateCreated": "2025-01-15",
-  "dateModified": "2025-10-23",
-  "datePublished": "2025-11-04"
+  "dateModified": "2025-11-07",
+  "datePublished": "2025-11-07"
 }
 
   </script><script>
