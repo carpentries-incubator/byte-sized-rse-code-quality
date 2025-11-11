@@ -19,3 +19,7 @@ At the end of this lesson, learners should be able to:
 - Recognise how maintaining good code style can reduce bugs and improve code quality.
 - Explain what a linter is and describe its role in detecting errors and enforcing style.
 - Perform automated code style checking and static code analysis with Pylint.
+
+### Slides
+
+[Slides](https://docs.google.com/presentation/d/1qNyDV3VDwv6Z3RHwfn5hL0pFxzK_DsWN3bPMjwV7Uoc/edit?usp=sharing) available under CC BY 4.0 licence.
