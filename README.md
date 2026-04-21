@@ -26,4 +26,4 @@ At the end of this lesson, learners should be able to:
 
 ### Recordings
 
-* Recording of the "Code Style, Quality & Linting" session delivered at SSI's RSC7, 12 November 2025
+* [Recording of the "Code Style, Quality & Linting" session delivered at SSI's RSC7, 12 November 2025](https://www.youtube.com/watch?v=qgM2omSejl0)
